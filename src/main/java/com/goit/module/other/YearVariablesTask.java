@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class YearVariablesTask {
    public static void main(String[] args) {
        // Сумма весенних, летних и осенних месяцев: 3 + 3 + 3 = 9

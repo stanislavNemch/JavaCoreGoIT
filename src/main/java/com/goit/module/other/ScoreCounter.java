@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class ScoreCounter {
     public int addScore(int currentScore, int amount) {
         currentScore += amount;

@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class Counter {
     public long current(long number) {
         return number;

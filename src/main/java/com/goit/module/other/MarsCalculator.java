@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class MarsCalculator {
     public int sum(int a, int b, int c) {
         return a + b + c;

@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class ProfessorHelper {
     public boolean areNumbersCool(int number1, int number2) {
         return number1 == number2;

@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class BrokenKeyboardCalculator {
 
     public int add(int a, int b) {

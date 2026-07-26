@@ -1,3 +1,5 @@
+package com.goit.module.other;
+
 public class ProfShop {
     public boolean isPriceOk(int price) {
         return price != 1000;
