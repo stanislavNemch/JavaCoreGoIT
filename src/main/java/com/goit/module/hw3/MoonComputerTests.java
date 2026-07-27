@@ -34,10 +34,31 @@ public class MoonComputerTests {
         scanner.close();
     }
 
+    public void testLogicalOperators() {
+        Scanner scanner = new Scanner(System.in);
+
+        boolean a = scanner.nextBoolean();
+        boolean b = scanner.nextBoolean();
+        boolean c = scanner.nextBoolean();
+
+        // Обчислюємо результат операції "І" (AND)
+        // Результат буде true, тільки якщо всі три змінні — true
+        boolean andResult = a && b && c;
+
+        // Обчислюємо результат операції "АБО" (OR)
+        // Результат буде true, якщо хоча б одна змінна — true
+        boolean orResult = a || b || c;
+
+        System.out.println(andResult + " " + orResult);
+
+        scanner.close();
+    }
+
     // Тестовий вивід на Hello Java стандартний ввід
     public static void main(String[] args) {
         MoonComputerTests computerTests = new MoonComputerTests();
         //computerTests.testBasicInputOutput();
-        computerTests.testMath();
+        //computerTests.testMath();
+        computerTests.testLogicalOperators();
     }
 }
