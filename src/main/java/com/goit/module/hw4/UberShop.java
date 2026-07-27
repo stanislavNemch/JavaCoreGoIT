@@ -1,4 +1,4 @@
-package com.goit.module.four;
+package com.goit.module.hw4;
 
 public class UberShop {
     public void printPrices(float[] prices) {

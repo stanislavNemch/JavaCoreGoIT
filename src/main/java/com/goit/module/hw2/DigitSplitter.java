@@ -1,4 +1,4 @@
-package com.goit.module.second;
+package com.goit.module.hw2;
 
 public class DigitSplitter {
 
