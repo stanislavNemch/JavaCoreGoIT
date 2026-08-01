@@ -1,4 +1,4 @@
-package com.goit.module.other;
+package com.goit.module.core.other;
 
 public class ProfessorHelper {
     public boolean areNumbersCool(int number1, int number2) {

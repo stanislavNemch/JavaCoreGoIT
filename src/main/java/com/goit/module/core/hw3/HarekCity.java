@@ -1,4 +1,4 @@
-package com.goit.module.hw3;
+package com.goit.module.core.hw3;
 
 import java.util.Arrays;
 
@@ -36,6 +36,27 @@ public class HarekCity {
         return Arrays.copyOfRange(results, 2, 5);
     }
 
+    public char[][] createKeyboard() {
+        return new char[][] {
+                {'1', '2', '3'},
+                {'4', '5', '6'},
+                {'7', '8', '9'},
+                {'*', '0', '#'}
+        };
+    }
+
+    public void printKeyboard() {
+        char[][] keyboard = createKeyboard();
+        for (char[] row : keyboard) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
+
+    public String[] makeCopy(String[] names) {
+        System.out.println("Copied!");
+        return Arrays.copyOf(names, names.length);
+    }
+
     public static void main(String[] args) {
         // String[] arr = new HarekCity().createEmptyNameArray();
         // System.out.println(Arrays.toString(arr));
@@ -55,8 +76,22 @@ public class HarekCity {
        // new HarekCity().changeElectResult(results);
        // System.out.println(Arrays.toString(results));
 
-        String[] results = new String[]{"mix", "max", "pex", "fux", "rox"};
-        String[] changedResults = new HarekCity().changeElectResultAgain(results);
-        System.out.println(Arrays.toString(changedResults));
+       // String[] results = new String[]{"mix", "max", "pex", "fux", "rox"};
+       // String[] changedResults = new HarekCity().changeElectResultAgain(results);
+       // System.out.println(Arrays.toString(changedResults));
+
+       // char[][] keyboard = new HarekCity().createKeyboard();
+       // for (int i = 0; i < keyboard.length; i++) {
+       //     System.out.println(Arrays.toString(keyboard[i]));
+       // }
+
+       // new HarekCity().printKeyboard();
+
+        String[] source = new String[] {"Hero", "Mihu"};
+        String[] copy = new HarekCity().makeCopy(source);
+
+        source[0] = "CHANGED!"; //Мы меняем исходный массив, но на копии это не отображается
+
+        System.out.println(Arrays.toString(copy));
     }
 }

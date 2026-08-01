@@ -1,4 +1,4 @@
-package com.goit.module.other;
+package com.goit.module.core.other;
 
 public class ScoreCounter {
     public int addScore(int currentScore, int amount) {

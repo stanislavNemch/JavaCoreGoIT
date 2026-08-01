@@ -1,4 +1,4 @@
-package com.goit.module.hw2;
+package com.goit.module.core.hw2;
 
 class NumberTester {
     public boolean isEven(int number) {

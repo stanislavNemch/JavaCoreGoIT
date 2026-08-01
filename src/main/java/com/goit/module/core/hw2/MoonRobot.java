@@ -1,4 +1,4 @@
-package com.goit.module.hw2;
+package com.goit.module.core.hw2;
 
 public class MoonRobot {
 

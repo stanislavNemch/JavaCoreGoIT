@@ -1,4 +1,4 @@
-package com.goit.module.other;
+package com.goit.module.core.other;
 
 public class ProfShop {
     public boolean isPriceOk(int price) {

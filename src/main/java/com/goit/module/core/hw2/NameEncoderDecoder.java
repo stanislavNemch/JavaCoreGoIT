@@ -1,4 +1,4 @@
-package com.goit.module.hw2;
+package com.goit.module.core.hw2;
 
 public class NameEncoderDecoder {
     // Константи для префікса та суфікса, щоб не дублювати їх у коді

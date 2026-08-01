@@ -1,4 +1,4 @@
-package com.goit.module.other;
+package com.goit.module.core.other;
 
 public class YearVariablesTask {
    public static void main(String[] args) {

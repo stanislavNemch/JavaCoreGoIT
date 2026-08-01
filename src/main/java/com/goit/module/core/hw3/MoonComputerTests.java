@@ -1,4 +1,4 @@
-package com.goit.module.hw3;
+package com.goit.module.core.hw3;
 
 import java.util.*;
 
