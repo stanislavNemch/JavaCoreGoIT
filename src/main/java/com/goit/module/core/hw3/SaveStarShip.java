@@ -29,6 +29,13 @@ public class SaveStarShip {
         }
     }
 
+    public int calculateNeededFuel(int distance) {
+        if (distance <= 20) {
+            return 1000;
+        }
+        return 1000 + (distance - 20) * 5;
+    }
+
     public String choosePlanet(long distanceToEarth) {
         return distanceToEarth < 45677 ? "Earth" : "Pern";
     }
@@ -84,9 +91,14 @@ public class SaveStarShip {
        // System.out.println(ship.calculateFuelPrice("STAR7", 5));
 
         //Should be 60
-        System.out.println(ship.roundSpeed(55));
-        System.out.println(ship.roundSpeed(10));
-        System.out.println(ship.roundSpeed(15));
-        System.out.println(ship.roundSpeed(89));
+       // System.out.println(ship.roundSpeed(55));
+       // System.out.println(ship.roundSpeed(10));
+       // System.out.println(ship.roundSpeed(15));
+       // System.out.println(ship.roundSpeed(89));
+
+        // calculateNeededFuel
+        System.out.println("calculateNeededFuel(1): " + ship.calculateNeededFuel(1));   // 1000
+        System.out.println("calculateNeededFuel(20): " + ship.calculateNeededFuel(20));  // 1000
+        System.out.println("calculateNeededFuel(25): " + ship.calculateNeededFuel(25));  // 1025
     }
 }
