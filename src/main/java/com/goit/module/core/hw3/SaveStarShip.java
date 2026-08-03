@@ -1,6 +1,7 @@
 package com.goit.module.core.hw3;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class SaveStarShip {
 
@@ -66,6 +67,63 @@ public class SaveStarShip {
         return (speed + 5) / 10 * 10;
     }
 
+    public void calculateMaxPower() {
+        Scanner scanner = new Scanner(System.in);
+
+        // 1. We read three engine power values
+        float p1 = scanner.nextFloat();
+        float p2 = scanner.nextFloat();
+        float p3 = scanner.nextFloat();
+
+        // 2. Find the maximum power among the three engines
+        float maxPower = Math.max(p1, Math.max(p2, p3));
+
+        // 3. Determine the coefficient based on the power
+        float coefficient;
+        if (maxPower < 10) {
+            coefficient = 0.7f;
+        } else if (maxPower >= 10 && maxPower <= 100) {
+            coefficient = 1.2f;
+        } else {
+            coefficient = 2.1f;
+        }
+
+        // 4. Calculate and print the result
+        float result = maxPower * coefficient;
+        System.out.println(result);
+
+        scanner.close();
+    }
+
+    public String getMyPrizes(int ticket) {
+
+        String result = "";
+
+        if (ticket % 10 == 0) result += "crystall ";
+        if (ticket % 10 == 7) result += "chip ";
+        if (ticket > 200) result += "coin ";
+
+        return result.strip();
+    }
+
+    public boolean isHangarOk(int side1, int side2, int price) {
+
+        int area = side1 * side2;
+
+        if (area < 1500) {
+            return false;
+        }
+
+        int longerSide = Math.max(side1, side2);
+        int shorterSide = Math.min(side1, side2);
+
+        if (longerSide > 2 * shorterSide) {
+            return false;
+        }
+
+        return price <= area * 1000;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -96,9 +154,26 @@ public class SaveStarShip {
        // System.out.println(ship.roundSpeed(15));
        // System.out.println(ship.roundSpeed(89));
 
-        // calculateNeededFuel
-        System.out.println("calculateNeededFuel(1): " + ship.calculateNeededFuel(1));   // 1000
-        System.out.println("calculateNeededFuel(20): " + ship.calculateNeededFuel(20));  // 1000
-        System.out.println("calculateNeededFuel(25): " + ship.calculateNeededFuel(25));  // 1025
+         // calculateNeededFuel
+        // System.out.println("calculateNeededFuel(1): " + ship.calculateNeededFuel(1));   // 1000
+        // System.out.println("calculateNeededFuel(20): " + ship.calculateNeededFuel(20));  // 1000
+        // System.out.println("calculateNeededFuel(25): " + ship.calculateNeededFuel(25));  // 1025
+
+         // calculateMaxPower — tests
+         // Test 1: input 1 3 5 → expected output 3.5
+         // Test 2: input 5 10 8 → expected output 12.0
+         // ship.calculateMaxPower();
+
+        //Should be "crystall coin"
+        // System.out.println(ship.getMyPrizes(250));
+        // System.out.println(ship.getMyPrizes(10));
+        // System.out.println(ship.getMyPrizes(77));
+        // System.out.println(ship.getMyPrizes(777));
+        // System.out.println(ship.getMyPrizes(54));
+
+        //Should be true
+        System.out.println(ship.isHangarOk(100, 75, 1000000));
+        //Should be false
+        System.out.println(ship.isHangarOk(100, 20, 10000));
     }
 }
