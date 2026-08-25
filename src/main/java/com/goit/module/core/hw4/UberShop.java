@@ -20,6 +20,30 @@ public class UberShop {
         }
     }
 
+    public int[] findMinMaxPrices(int[] prices) {
+
+        if (prices == null || prices.length == 0) {
+           return new int[0];
+        }
+
+        int min = prices[0];
+        int max = prices[0];
+
+        for (int price : prices) {
+            if (price < min) {
+                min = price;
+            }
+            if (price > max) {
+                max = price;
+            }
+        }
+
+        if (max == min) {
+            return new int[]{min};
+        }
+
+        return new int[]{min, max};
+    }
 
     //Test output
     public static void main(String[] args) {
@@ -33,5 +57,12 @@ public class UberShop {
         float[] pricesTwo = new float[] {100f, 1500f};
         shop.multiplyPrices(pricesTwo);
         System.out.println(Arrays.toString(pricesTwo));
+
+        //Should be [3, 1550]
+        System.out.println(Arrays.toString(shop.findMinMaxPrices(new int[] {10, 50, 3, 1550})));
+        //Should be []
+        System.out.println(Arrays.toString(shop.findMinMaxPrices(new int[] {})));
+        //Should be [50]
+        System.out.println(Arrays.toString(shop.findMinMaxPrices(new int[] {50, 50})));
     }
 }
