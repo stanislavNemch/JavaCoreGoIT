@@ -171,19 +171,19 @@ public class UberShop {
 
         System.out.println("Метод, який єднає два списки товарів.");
         //Якщо оба массива length == 0
-        System.out.println(Arrays.toString(shop.mergeStocks(new String[] {}, new String[] {})));
+        System.out.println("Фінальний перелік товарів, коли {}/{}: " + Arrays.toString(shop.mergeStocks(new String[] {}, new String[] {})));
         //Якщо оба заповнені
-        System.out.println(Arrays.toString(shop.mergeStocks(new String[] {"gun", "bow"}, new String[] {"firegun"})));
+        System.out.println("Фінальний перелік товарів, коли {\"gun\", \"bow\"}/{\"firegun\"}: " + Arrays.toString(shop.mergeStocks(new String[] {"gun", "bow"}, new String[] {"firegun"})));
         //Якщо перший null, другий заповнений
-        System.out.println(Arrays.toString(shop.mergeStocks(null, new String[] {"firegun"})));
+        System.out.println("Фінальний перелік товарів, коли null/{\"firegun\"}: " + Arrays.toString(shop.mergeStocks(null, new String[] {"firegun"})));
         //Якщо другий null, перший заповнений
-        System.out.println(Arrays.toString(shop.mergeStocks(new String[] {"gun", "bow"}, null)));
+        System.out.println("Фінальний перелік товарів, коли {\"gun\", \"bow\"}/null: " + Arrays.toString(shop.mergeStocks(new String[] {"gun", "bow"}, null)));
         //Якщо оба null
-        System.out.println(Arrays.toString(shop.mergeStocks(null, null)));
+        System.out.println("Фінальний перелік товарів, коли null/null: " + Arrays.toString(shop.mergeStocks(null, null)));
         //Якщо перший пустий, другий заповнений
-        System.out.println(Arrays.toString(shop.mergeStocks(new String[] {}, new String[] {"firegun"})));
+        System.out.println("Фінальний перелік товарів, коли {} / {\"firegun\"}: " + Arrays.toString(shop.mergeStocks(new String[] {}, new String[] {"firegun"})));
         //Якщо оба массива заповнені
-        System.out.println(Arrays.toString(shop.mergeStocks(new String[] {"Avrocak", "Saw", "hywib", "naxyhekya", "du"},
+        System.out.println("Фінальний перелік товарів, коли {\"Avrocak\", \"Saw\", \"hywib\", \"naxyhekya\", \"du\"} / {\"Iq\", \"ta\", \"uzj\", \"Kohauwq\", \"sa\"}: " + Arrays.toString(shop.mergeStocks(new String[] {"Avrocak", "Saw", "hywib", "naxyhekya", "du"},
                 new String[] {"Iq", "ta", "uzj", "Kohauwq", "sa"})));
     }
 }
