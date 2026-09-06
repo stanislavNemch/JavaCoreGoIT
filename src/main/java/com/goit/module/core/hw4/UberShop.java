@@ -135,6 +135,21 @@ public class UberShop {
         return result;
     }
 
+    public int getPricesSum(int[] prices, int minPrice, int maxPrice) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+
+        int sum = 0;
+        for (int price : prices) {
+            if (price >= minPrice && price <= maxPrice) {
+                sum += price;
+            }
+        }
+
+        return sum;
+    }
+
     //Test output
     public static void main(String[] args) {
         UberShop shop = new UberShop();
@@ -185,5 +200,9 @@ public class UberShop {
         //Якщо оба массива заповнені
         System.out.println("Фінальний перелік товарів, коли {\"Avrocak\", \"Saw\", \"hywib\", \"naxyhekya\", \"du\"} / {\"Iq\", \"ta\", \"uzj\", \"Kohauwq\", \"sa\"}: " + Arrays.toString(shop.mergeStocks(new String[] {"Avrocak", "Saw", "hywib", "naxyhekya", "du"},
                 new String[] {"Iq", "ta", "uzj", "Kohauwq", "sa"})));
+
+        System.out.println("Метод, який повертає суму цін із масиву prices, які знаходяться в межах від minPrice до maxPrice включно.");
+        System.out.println("Сума цін: " + shop.getPricesSum(new int[] {10, 700, 50, 500}, 10, 50));
+        System.out.println("Сума цін: " + shop.getPricesSum(new int[] {500, 400, 200}, 10, 50));
     }
 }
