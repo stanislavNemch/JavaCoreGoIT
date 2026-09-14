@@ -1,4 +1,4 @@
-package task_gem;
+package practice;
 
 public class AccessRightsCheck {
     public enum UserRole { ADMIN, MANAGER, CUSTOMER }

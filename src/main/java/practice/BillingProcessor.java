@@ -1,4 +1,4 @@
-package task_gem;
+package practice;
 
 //From Switch Statement to Switch Expression
 

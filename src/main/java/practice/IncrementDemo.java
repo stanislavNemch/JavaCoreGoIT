@@ -1,4 +1,4 @@
-package task_gem;
+package practice;
 
 public class IncrementDemo {
 

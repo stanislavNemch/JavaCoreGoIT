@@ -1,4 +1,4 @@
-package task_gem;
+package practice;
 
 public class TypePromotionDemo {
     public static void main(String[] args) {
