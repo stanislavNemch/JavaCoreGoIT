@@ -2,6 +2,18 @@ package com.goit.module.core.hw5;
 
 public class SpaceShip {
     private String name;
+    private String serialNumber;
+
+    public String getSerialNumber() {
+        return serialNumber;
+    }
+
+    public void setSerialNumber(String serialNumber) {
+        if (serialNumber == null || serialNumber.isBlank() || !serialNumber.equals("SN506788")) {
+            return;
+        }
+        this.serialNumber = serialNumber;
+    }
 
     public String getName() {
         return name;
@@ -27,5 +39,11 @@ public class SpaceShip {
         System.out.println(ship.getName()); //Should be Walker, empty value ignored
         ship.setName("Voyager".repeat(100));
         System.out.println(ship.getName()); //Should be Walker, too long value ignored
+
+        ship.setSerialNumber("SN506788");
+        System.out.println(ship.getSerialNumber()); //Should be SN506788
+
+        ship.setSerialNumber("EE123456");
+        System.out.println(ship.getSerialNumber()); //Should be SN506788 - old value
     }
 }
