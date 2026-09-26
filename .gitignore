@@ -1,16 +1,23 @@
+# Java bytecode compilation artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# Build output directories
+out/
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.kotlin
+build/
+bin/
+
+# OS system junk
+Thumbs.db
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
 *.iws
 *.iml
+*.ipr
+.idea/
 *.ipr
 
 ### Eclipse ###
