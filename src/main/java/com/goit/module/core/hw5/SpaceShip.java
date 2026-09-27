@@ -9,7 +9,7 @@ public class SpaceShip {
     }
 
     public void setSerialNumber(String serialNumber) {
-        if (serialNumber == null || serialNumber.isBlank() || !serialNumber.equals("SN506788")) {
+        if (serialNumber == null || serialNumber.isBlank() || !serialNumber.matches("SN\\d{6}")) {
             return;
         }
         this.serialNumber = serialNumber;
@@ -44,6 +44,12 @@ public class SpaceShip {
         System.out.println(ship.getSerialNumber()); //Should be SN506788
 
         ship.setSerialNumber("EE123456");
+        System.out.println(ship.getSerialNumber()); //Should be SN506788 - old value
+
+        ship.setSerialNumber("HJ879649");
+        System.out.println(ship.getSerialNumber()); //Should be SN506788 - old value
+
+        ship.setSerialNumber("SN1067625");
         System.out.println(ship.getSerialNumber()); //Should be SN506788 - old value
     }
 }
