@@ -53,4 +53,12 @@ public class SpaceShip {
         }
         this.name = name;
     }
+
+    public void printInfo() {
+        // Guard Clause: якщо дані ще не задані — нічого не друкуємо (той самий стиль, що й у сеттерах вище)
+        if (name == null || serialNumber == null) {
+            return;
+        }
+        System.out.println("Name is " + name + ", serial number is " + serialNumber);
+    }
 }
