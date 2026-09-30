@@ -83,27 +83,24 @@ class SpaceShipTest {
     }
 
     @Test
-    void serialNumberIgnoresWrongPrefixEEAndKeepsPrevious() {
+    void serialNumberIgnoresWrongPrefixEE() {
         SpaceShip ship = new SpaceShip();
-        ship.setSerialNumber("SN506788");
         ship.setSerialNumber("EE123456");
-        assertEquals("SN506788", ship.getSerialNumber());
+        assertNull(ship.getSerialNumber());
     }
 
     @Test
-    void serialNumberIgnoresWrongPrefixHJAndKeepsPrevious() {
+    void serialNumberIgnoresWrongPrefixHJ() {
         SpaceShip ship = new SpaceShip();
-        ship.setSerialNumber("SN506788");
         ship.setSerialNumber("HJ879649");
-        assertEquals("SN506788", ship.getSerialNumber());
+        assertNull(ship.getSerialNumber());
     }
 
     @Test
-    void serialNumberIgnoresWrongLengthAndKeepsPrevious() {
+    void serialNumberIgnoresWrongLength() {
         SpaceShip ship = new SpaceShip();
-        ship.setSerialNumber("SN506788");
         ship.setSerialNumber("SN1067625");
-        assertEquals("SN506788", ship.getSerialNumber());
+        assertNull(ship.getSerialNumber());
     }
 
     @Test
@@ -121,19 +118,17 @@ class SpaceShipTest {
     }
 
     @Test
-    void serialNumberIgnoresLowercasePrefixAndKeepsPrevious() {
+    void serialNumberIgnoresLowercasePrefix() {
         SpaceShip ship = new SpaceShip();
-        ship.setSerialNumber("SN506788");
         ship.setSerialNumber("sn506788");
-        assertEquals("SN506788", ship.getSerialNumber());
+        assertNull(ship.getSerialNumber());
     }
 
     @Test
-    void serialNumberIgnoresNonDigitCharactersAndKeepsPrevious() {
+    void serialNumberIgnoresNonDigitCharacters() {
         SpaceShip ship = new SpaceShip();
-        ship.setSerialNumber("SN506788");
         ship.setSerialNumber("SN12A456");
-        assertEquals("SN506788", ship.getSerialNumber());
+        assertNull(ship.getSerialNumber());
     }
 
     @Test
