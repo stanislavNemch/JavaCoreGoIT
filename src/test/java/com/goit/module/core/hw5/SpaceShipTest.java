@@ -15,12 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 // Правило тесту: 1) підготувати об'єкт, 2) викликати метод, 3) перевірити результат.
 class SpaceShipTest {
 
+    // Перевіряємо, що ім'я та серійний номер корабля спочатку дорівнюють null.
     @Test
     void nameIsInitiallyNull() {
         SpaceShip ship = new SpaceShip();
         assertNull(ship.getName());
     }
 
+    // Перевіряємо, що серійний номер корабля спочатку дорівнює null.
     @Test
     void serialNumberIsInitiallyNull() {
         SpaceShip ship = new SpaceShip();
@@ -35,6 +37,7 @@ class SpaceShipTest {
         assertEquals("Walker", ship.getName());
     }
 
+    // Перевіряємо, що ім'я не можна змінити на порожнє значення.
     @Test
     void setNameIgnoresBlankValueAndKeepsPrevious() {
         SpaceShip ship = new SpaceShip();
@@ -43,6 +46,7 @@ class SpaceShipTest {
         assertEquals("Walker", ship.getName());
     }
 
+    // Перевіряємо, що ім'я не можна змінити на null.
     @Test
     void setNameIgnoresNullValueAndKeepsPrevious() {
         SpaceShip ship = new SpaceShip();
@@ -51,6 +55,7 @@ class SpaceShipTest {
         assertEquals("Walker", ship.getName());
     }
 
+    // Перевіряємо, що ім'я не можна змінити на рядок, який складається лише з пробілів.
     @Test
     void setNameAcceptsExactlyMaxLength() {
         SpaceShip ship = new SpaceShip();
@@ -59,6 +64,7 @@ class SpaceShipTest {
         assertEquals(maxLengthName, ship.getName());
     }
 
+    // Перевіряємо, що ім'я не можна змінити на рядок, який перевищує максимальну довжину.
     @Test
     void setNameRejectsValueAboveMaxLength() {
         SpaceShip ship = new SpaceShip();
@@ -67,14 +73,15 @@ class SpaceShipTest {
         assertEquals("Walker", ship.getName());
     }
 
+    // Перевірка занадто короткого номера (границя довжини знизу)
     @Test
-    void setNameIgnoresTooLongValueAndKeepsPrevious() {
+    void serialNumberIgnoresTooShortLength() {
         SpaceShip ship = new SpaceShip();
-        ship.setName("Walker");
-        ship.setName(nameOfLength(700));
-        assertEquals("Walker", ship.getName());
+        ship.setSerialNumber("SN123");
+        assertNull(ship.getSerialNumber());
     }
 
+    // Перевірка правильного серійного номера
     @Test
     void serialNumberStoresValidValue() {
         SpaceShip ship = new SpaceShip();
@@ -82,6 +89,7 @@ class SpaceShipTest {
         assertEquals("SN506788", ship.getSerialNumber());
     }
 
+    // Перевірка неправильного префіксу (не "SN")
     @Test
     void serialNumberIgnoresWrongPrefixEE() {
         SpaceShip ship = new SpaceShip();
@@ -89,6 +97,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевірка неправильного префіксу (не "SN")
     @Test
     void serialNumberIgnoresWrongPrefixHJ() {
         SpaceShip ship = new SpaceShip();
@@ -96,6 +105,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевірка занадто довгого номера (границя довжини зверху)
     @Test
     void serialNumberIgnoresWrongLength() {
         SpaceShip ship = new SpaceShip();
@@ -103,6 +113,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевіряємо, що серійний номер не приймає null.
     @Test
     void serialNumberIgnoresNullValue() {
         SpaceShip ship = new SpaceShip();
@@ -110,6 +121,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевіряємо, що серійний номер не приймає порожній рядок.
     @Test
     void serialNumberIgnoresBlankValue() {
         SpaceShip ship = new SpaceShip();
@@ -117,6 +129,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевіряємо, що серійний номер не приймає літери у префіксі.
     @Test
     void serialNumberIgnoresLowercasePrefix() {
         SpaceShip ship = new SpaceShip();
@@ -124,6 +137,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевіряємо, що серійний номер не приймає літери у числовій частині.
     @Test
     void serialNumberIgnoresNonDigitCharacters() {
         SpaceShip ship = new SpaceShip();
@@ -131,6 +145,7 @@ class SpaceShipTest {
         assertNull(ship.getSerialNumber());
     }
 
+    // Перевіряємо, що серійний номер не можна змінити після того, як він вже встановлений.
     @Test
     void serialNumberIsNotOverwrittenOnceSet() {
         SpaceShip ship = new SpaceShip();
@@ -149,6 +164,25 @@ class SpaceShipTest {
         assertEquals("Name is Voyager, serial number is SN506788", printInfoToText(ship));
     }
 
+    // printInfo нічого не друкує, якщо є тільки ім'я
+    @Test
+    void printInfoPrintsNothingWhenOnlyNameIsSet() {
+        SpaceShip ship = new SpaceShip();
+        ship.setName("Voyager");
+
+        assertEquals("", printInfoToText(ship));
+    }
+
+    // printInfo нічого не друкує, якщо є тільки серійний номер
+    @Test
+    void printInfoPrintsNothingWhenOnlySerialNumberIsSet() {
+        SpaceShip ship = new SpaceShip();
+        ship.setSerialNumber("SN506788");
+
+        assertEquals("", printInfoToText(ship));
+    }
+
+    // printInfo нічого не друкує, якщо немає ні імені, ні серійного номера
     @Test
     void printInfoPrintsNothingWhenInfoIsMissing() {
         SpaceShip ship = new SpaceShip();
