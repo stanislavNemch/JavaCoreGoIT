@@ -2,7 +2,6 @@ package com.goit.module.core.hw5;
 
 public class SpaceRocketLauncher {
 
-
     private int bigRocketCount;
     private int smallRocketCount;
 
@@ -26,5 +25,39 @@ public class SpaceRocketLauncher {
             return;
         }
         this.smallRocketCount = smallRocketCount;
+    }
+
+    public void launchBigRocket() {
+        if (bigRocketCount > 0) {
+            bigRocketCount--;
+            System.out.println("Launch big rocket");
+        }
+    }
+
+    public void launchSmallRocket() {
+        if (smallRocketCount > 0) {
+            smallRocketCount--;
+            System.out.println("Launch small rocket");
+        }
+    }
+
+    public int getTotalPower() {
+        return bigRocketCount * 100 + smallRocketCount * 50;
+    }
+
+    public static void main(String[] args) {
+        SpaceRocketLauncher launcher = new SpaceRocketLauncher();
+        launcher.setBigRocketCount(5);
+        launcher.setSmallRocketCount(10);
+
+        System.out.println("Power is " + launcher.getTotalPower());
+
+        launcher.launchBigRocket();
+        System.out.println("Big rocket count is " + launcher.getBigRocketCount());
+
+        launcher.launchSmallRocket();
+        System.out.println("Small rocket count is " + launcher.getSmallRocketCount());
+
+        System.out.println("Power is " + launcher.getTotalPower());
     }
 }
