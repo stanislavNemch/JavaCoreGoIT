@@ -18,7 +18,6 @@ Thumbs.db
 *.iml
 *.ipr
 .idea/
-*.ipr
 
 ### Eclipse ###
 .apt_generated
