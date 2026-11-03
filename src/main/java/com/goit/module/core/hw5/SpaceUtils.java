@@ -11,7 +11,7 @@ public class SpaceUtils {
     }
 
     public static String generateStartMessage(String shipName, String time) {
-        return "Ship " + shipName + " starts at " + time;
+        return "Ship " + shipName + " start at " + time;
     }
 
     public static void main(String[] args) {
