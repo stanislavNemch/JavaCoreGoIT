@@ -1,4 +1,4 @@
-package com.goit.billing;
+package practice.billing;
 
 public class SecurityDemo {
 

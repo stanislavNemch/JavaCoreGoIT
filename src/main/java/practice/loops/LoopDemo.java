@@ -1,4 +1,4 @@
-package com.goit.loops;
+package practice.loops;
 
 public class LoopDemo {
 

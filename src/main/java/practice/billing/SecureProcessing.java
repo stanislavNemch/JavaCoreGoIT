@@ -1,4 +1,4 @@
-package com.goit.billing;
+package practice.billing;
 
 /**
  * Клас для демонстрації базової бізнес-логіки та контролю безпеки типів.
